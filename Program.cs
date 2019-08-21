@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PostD365CaseDataToExternalApplication.cs
+namespace PostCaseDataToExternalApplication.cs
 {
     class Program
     {
