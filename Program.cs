@@ -25,9 +25,9 @@ namespace PostD365CaseDataToExternalApplication.cs
 
         private static string GetBase64Token(out string url, out string auth)
         {
-            string username = "admin";
-            string password = "Qwerty@123";
-            url = "https://dev65950.service-now.com/api/now/table/incident";
+            string username = "Username";
+            string password = "Password";
+            url = "External Web Api Url";
             auth = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(username + ":" + password));
             return auth;
         }
