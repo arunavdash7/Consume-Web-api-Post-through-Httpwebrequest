@@ -24,9 +24,9 @@ namespace PostD365CaseDataToExternalApplication.cs
 
         private static string GetBase64Token(out string url, out string auth)
         {
-            string username = "Provide Username";
-            string password = "Provide Password";
-            url = "Provide External url";
+            string username = "Username";
+            string password = "Password";
+            url = "External Web api url";
             auth = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(username + ":" + password));
             return auth;
         }
@@ -36,7 +36,7 @@ namespace PostD365CaseDataToExternalApplication.cs
             using (MemoryStream SerializememoryStream = new MemoryStream())
             {
                 //create a sample data of type CaseDetails Class add details
-                Case caseD = new Case();
+                CaseRequest caseD = new CaseRequest();
                 caseD.Description = "Description1";
                 caseD.ServiceNowAssignmentGroup = "ServiceDesk";
                 caseD.ServiceNowCallerId = "mycallerid";
