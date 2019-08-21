@@ -47,7 +47,7 @@ namespace PostD365CaseDataToExternalApplication.cs
                 caseD.ServiceNowIncidentImpact = 3;
                 caseD.ServiceNowIncidentPriority = 3;
                 caseD.ServiceNowSubCategory = "Incident";
-                caseD.ServiceNowTicketShortDescription = "Arunav Dash - Sample Exception generated for SNOW";
+                caseD.ServiceNowTicketShortDescription = "Arunav Dash - Sample Exception generated";
 
                 //initialize DataContractJsonSerializer object and pass Student class type to it
                 var serializer = new DataContractJsonSerializer(caseD.GetType(), new DataContractJsonSerializerSettings
