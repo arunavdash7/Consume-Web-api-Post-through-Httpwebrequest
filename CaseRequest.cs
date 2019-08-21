@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PostD365CaseDataToExternalApplication.cs
+namespace PostCaseDataToExternalApplication.cs
 {
     [DataContract]
     public class CaseRequest
