@@ -19,19 +19,20 @@ namespace PostD365CaseDataToExternalApplication.cs
             HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
             request.Headers.Add("Authorization", authToken);
             request.Method = "Post";
-            PostCaseDataToExternalWebApi(request);
+            string getJsonData = PostCaseDataToExternalWebApi(request);
+            GetResponseFromExternalWebApi(request);
         }
 
         private static string GetBase64Token(out string url, out string auth)
         {
-            string username = "Username";
-            string password = "Password";
-            url = "External Web api url";
+            string username = "admin";
+            string password = "Qwerty@123";
+            url = "https://dev65950.service-now.com/api/now/table/incident";
             auth = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(username + ":" + password));
             return auth;
         }
 
-        private static void PostCaseDataToExternalWebApi(HttpWebRequest request)
+        private static string  PostCaseDataToExternalWebApi(HttpWebRequest request)
         {
             using (MemoryStream SerializememoryStream = new MemoryStream())
             {
@@ -62,9 +63,10 @@ namespace PostD365CaseDataToExternalApplication.cs
                 StreamReader sr = new StreamReader(SerializememoryStream);
                 //get JSON data serialized in string format in string variable
                 string Serializedresult = sr.ReadToEnd();
+                return Serializedresult;
             }
 
-            GetResponseFromExternalWebApi(request);
+            //GetResponseFromExternalWebApi(request);
         }
 
         private static void GetResponseFromExternalWebApi(HttpWebRequest request)
